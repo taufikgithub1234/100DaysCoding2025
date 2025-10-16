@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.println("==== Menu Makanan ====");
+		System.out.println("1. Nasi Goreng - 10000");
+		System.out.println("2. Es teh - 5000");
+		System.out.println("3. Air Mineral - 5000");
+		System.out.print("Pilih Menu 1-3: ");
+		int menu = in.nextInt();
+		System.out.print("Masukkan Nama pemesan: ");
+		String nama = in.nextLine();
+		in.nextLine();
+		System.out.print("Masukkan Jumlah: ");
+		int jumlah = in.nextInt();
+		System.out.print("Masukkan Uang Bayar: ");
+		int bayar = in.nextInt();
+		
+		
+		int harga = 0;
+		String pesanan ="";
+		if(menu == 1){
+		  pesanan = "Nasi Goreng";
+		  harga = 10000;  
+	    }else if(menu == 2){
+	      pesanan = "Es teh";
+	      harga = 5000; 
+	    }else if(menu == 3){
+	      pesanan = "Air Mineral";
+	      harga = 5000; 
+	    }else{
+	      System.out.println("Pilihan tidak valid");
+	    }
+	    
+	    int total = harga*jumlah;
+	    int kembalian = bayar - total;
+	    
+	    System.out.println("/n==========Struk Pemesanan============");
+		System.out.println("Nama pemesan: "+nama);
+		System.out.println("Pesanan: "+pesanan);
+		System.out.println("Jumlah pesanan: "+jumlah+" "+pesanan);
+		System.out.println("Total Bayar: "+total);
+		System.out.println("Uang Bayar: "+bayar);
+		System.out.println("Kembalian: "+Math.abs(kembalian));
+		if(bayar<total){
+	        System.out.println("Uang bayar tidak cukup");
+	        
+	    }
+		System.out.println("==========Terima Kasih,kembali lagi yah (: ============");
+		
+	}
+}
